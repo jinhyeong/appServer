@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>${hometitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<img src='resources/image/test.jpg'>
+
+<h2>${hometitle}</h2>
+<p>
+	关于APP~~~
+</p>
+
+<li>
+${textappname} = $appname
+</li>
+<li>
+${textappversion} = $appversion
+</li>
+<li>
+$textcompanyname = $companyname
+</li>
+<li>
+${textcompanyurl} = $companyurl
+</li>
+
+
+<h3>项目介绍</h3>
+<p>xxxxxxx</p>
+<h3>App下载地址</h3>
+<a href="${companyurl}">${companyurl}</a>
+</body>
+</html>

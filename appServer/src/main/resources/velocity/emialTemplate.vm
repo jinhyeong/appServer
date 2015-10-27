@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<img src='cid:imgTest'>
+	<h3>
+		<span style="color: #009900;">Hi！亲爱的${userName}</span>
+	</h3>
+	<p>
+		<span>感谢您注册SDB</span>
+	</p>
+	<p>
+		<span>请点击链接，完成邮箱安全验证： <a
+			href="http://localhost:8080/mail/validate/${userId}/${eMail}/${vCode}">http://localhost:8080/mail/validate/${userId}/${eMail}/${vCode}</a></span>
+	</p>
+	<p>
+		<span style="color: #E53333;">(该链接24小时内有效，24小时后需要重新获取)</span>
+	</p>
+	<p>
+		<strong>如果不能点击链接，请复制地址并粘贴到浏览器的地址输入框</strong> <br /> </span>
+	</p>
+	<br />
+	<p>若您没有申请过验证邮箱 ，请您忽略此邮件，由此给您带来的不便请谅解。</p>
+	<br />
+	<p>
+		<span style="font-size: 13px;">温馨提示：此邮件由系统发送，请勿直接回复。</span>
+	</p>
+	<a href='http://www.baidu.com'>我们的网站</a>
+</body>
+</html>

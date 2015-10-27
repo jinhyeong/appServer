@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">
+	<!-- maxBytesLocalHeap="50M" -->
+
+	<diskStore path="java.io.tmpdir" />
+	<!-- TTL（Time To Live ） 存活期，即从缓存中创建时间点开始直到它到期的一个时间段（不管在这个时间段内有没有访问都将过期） 
+		TTI（Time To Idle） 空闲期，即一个数据多久没被访问将从缓存中移除的时间 -->
+	<defaultCache maxEntriesLocalHeap="1000" eternal="false"
+		timeToIdleSeconds="3600" timeToLiveSeconds="3600" overflowToDisk="false"
+		memoryStoreEvictionPolicy="LRU">
+	</defaultCache>
+
+	<cache name="userCache" maxEntriesLocalHeap="2000" eternal="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+		statistics="true">
+	</cache>
+
+	<cache name="testCache" maxEntriesLocalHeap="2000" eternal="false"
+		timeToIdleSeconds="600" timeToLiveSeconds="600" overflowToDisk="false"
+		statistics="true">
+	</cache>
+
+</ehcache>

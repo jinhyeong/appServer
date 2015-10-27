@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>邮箱验证不通过</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<img src='\resources\image\test.jpg'>
+
+<h2><span style="color: #990000;">邮箱验证不通过</span></h2>
+
+<span style="color: #990000;">随便弄的</span></br>
+
+当然 这是假的，逻辑并没有验证</br>
+
+<p>
+进行验证的用户ID是：${userId}</br>
+进行验证的邮箱是：${eMail}</br>
+进行验证的代码是：${vCode}</br>
+</p>
+
+<a href='http://www.baidu.com'>加链接处</a>
+
+</body>
+</html>
