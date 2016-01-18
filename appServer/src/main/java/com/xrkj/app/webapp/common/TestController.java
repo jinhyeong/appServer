@@ -18,7 +18,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -172,7 +174,7 @@ public class TestController {
 
     @RequestMapping(value = "/getFile")
     public ResponseEntity<byte[]> getFile(@RequestParam("fileName") String fileName) throws IOException {
-        System.out.println("load image of " + fileName);
+        logger.debug("对应的文件名是：{}", fileName);
 
         ClassPathResource res = new ClassPathResource(fileName);
         if (res == null || !res.exists()) {
@@ -181,7 +183,11 @@ public class TestController {
 
         byte[] fileData = FileCopyUtils.copyToByteArray(res.getInputStream());
 
-        return new ResponseEntity<byte[]>(fileData, HttpStatus.OK);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        headers.setContentDispositionFormData("attachment", fileName);
+
+        return new ResponseEntity<byte[]>(fileData, headers, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "fileUpload", method = RequestMethod.POST, headers = ("Content-Type=multipart/form-data"))

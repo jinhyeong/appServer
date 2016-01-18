@@ -51,6 +51,10 @@
 			<bean class="com.xrkj.app.webapp.base.argresolvers.AppUserArgumentResolver" />
 		</mvc:argument-resolvers>
 		<mvc:message-converters register-defaults="true">
+			<!-- 先注册，不然不会进入 -->
+			<bean
+				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+
 			<!-- 配置Fastjson支持 -->
 			<bean
 				class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
@@ -127,5 +131,5 @@
 			<value>.vm</value>
 		</property>
 	</bean>
-	
+
 </beans>
